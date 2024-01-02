@@ -26,18 +26,24 @@ app.use(cookieParser());
 
 app.use("/checkStatus", auth);
 
-// const connection = new URL('mysql://uojqsbxgwqlkw6y0:0l9Z6OBR0EEq8TOHogQ5@bp9hwzckt2vzlppuulkl-mysql.services.clever-cloud.com:3306/bp9hwzckt2vzlppuulkl')
-// console.log(connection)
 
-// const db = mysql.createConnection(connection)
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '1234',
-  database: 'quiz_portal',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DBNAME,
   port: '3306',
-  multipleStatements: true
+  multipleStatements: true,
+  connectTimeout: 20000,
 })
+// const db = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   password: '1234',
+//   database: 'quiz_portal',
+//   port: '3306',
+//   multipleStatements: true
+// })
 
 
 try {
