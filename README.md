@@ -4,7 +4,8 @@
 ## Deployed at <a href='https://quiz-api-service.onrender.com/login' > here </a>
 ### Can test the route by loggin in 
 - https://quiz-api-service.onrender.com/login POST request with body
-- ```{
+- ```
+    {
         "username":"yadav_1234",
         "password":"1234"
     }
